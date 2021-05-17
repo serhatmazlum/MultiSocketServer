@@ -6,7 +6,6 @@ TCP/IP (Transmission Control Protocol (TCP) and the Internet Protocol (IP))  use
 Tested with <a href="https://www.hw-group.com/software/hercules-setup-utility"> HERCULES </a>
 
 
-https://github.com/serhatmazlum/MultiSocketServer/issues/1#issue-893401264
-
-https://github.com/serhatmazlum/MultiSocketServer/issues/2#issue-893402644
+serhatmazlum/MultiSocketServer/issues/1#issue-893401264
+serhatmazlum/MultiSocketServer/issues/2#issue-893402644
 
