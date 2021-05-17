@@ -8,14 +8,14 @@ from Tools.scripts.serve import app
 from ServerSocketUI import *
 import threading
 
-# create apllication
+
 
 
 
 
 
 SERVER_ip = socket.gethostbyname(socket.gethostname())   #getting ip from computer
-PORT = 10001                                             # defining port
+PORT = 10001
 income_client, income_data, client_data = [], [],[]
 con_count = 0
 
@@ -58,34 +58,12 @@ def handle(connection, address):
             logger.debug(f"PMDs addres %r",address)
             c =  Pmd(data, address)
             print("Connected :",c.serialPmd())
-            #send_message(connection)
-            #income_client.append(address[0])
-            #income_data.append(data)
-            #d = get_time()
-            #date_time.append(d)
 
-
-            #file = open("pmd_log.csv", "w")
-            #file.write("data;" + data + ";" + "time;" + d)
-            #connection.sendall(data) #send back data to the client
-            #logger.debug("Sent data")
 
     except:
         logger.exception("Problem handling request")
     finally:
         logger.debug("Closing socket")
-        #Pmd.ipPmd()
-        #file.close()
-        #client_data = zip(income_client, income_data, date_time)
-        #client_data = list(client_data)
-
-
-        #print(f"client data: {client_data}\n ", end ="", flush=True)
-        #liste = [i for i in client_data]
-
-        #for liste in client_data:
-            #print(f"Client adress and data: {liste}.....")
-
 
 
 
@@ -211,37 +189,29 @@ class Server(object):
             send_message(self.conn)
             con_count += 1
             print("Count of connection: ", con_count)
-            # ui.TableWidget.insert(self.conn)
-            #self.logger.debug("Got connection")
+
             self.ip = self.address[0]
 
-            #print(f"connection object: {self.conn}")
+
 
             #starting multiprocessing between start() method and handle() func.
             process = multiprocessing.Process(target=handle, args=(self.conn, self.address))
             process.daemon = True
             process.start()
 
-            #self.logger.debug("Started process %r", process)
-
-
-# def thread():
-    # thread = threading.Thread(target = Server)
-    # thread.daemon = True
-    # s.start
 
 def send_message(conn):
 
     try:
         #addr = int(input("client addres: "))
-       # sleep(.2)
+        # sleep(.2)
         #message = input("Input message: ")
         #message = "\x0200000RS\x0531\x03"
         message = '\x0200000PMO\x0562\x03'
         message = message.encode("utf-8")
         #addr = ('192.168.1.25', 10000)
         conn.send(message)
-        #print("data:", message)
+
     except EOFError as e:
         print(end = "")
 
@@ -255,19 +225,6 @@ if __name__ == "__main__":
     server = Server(SERVER_ip, PORT)
     print(f"Server IP: {SERVER_ip}")
 
-    Application = QApplication(sys.argv)
-
-    mainwindow = QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(mainwindow)
-    #ui.pushButton.clicked.connect(thread)
-    def show_application():
-        mainwindow.show()
-
-
-    app_thread = threading.Thread(target=show_application())
-
-    app_thread.start()
     try:
         logging.info("Listening")
         server.start()
@@ -283,4 +240,4 @@ if __name__ == "__main__":
             process.join()
     logging.info("All done")
     sys.exit()
-    # sys.exit(main.exec())
+
