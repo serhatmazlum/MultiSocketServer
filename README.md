@@ -1,6 +1,8 @@
 # MultiSocketServer
 Receive and sending data from server app to embedded IOT devices
 
+### Purpose
+
 TCP/IP (Transmission Control Protocol (TCP) and the Internet Protocol (IP))  used for communucation
 
 Tested with <a href="https://www.hw-group.com/software/hercules-setup-utility"> HERCULES </a>
