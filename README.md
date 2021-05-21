@@ -3,13 +3,13 @@ Receive and sending data from server app to embedded IOT devices
 
 ### Purpose:
 Our company working on IOT devices for the manufactories.
-Our devices is based on embedded electronic and communucation with local server via wifi.
-We need to testing devices like a test automation systems.
+These devices is based on embedded electronic and communucation with local server via wifi.
+We need to testing device, with like a test automation systems.
 
 ### What are program doing?
-This program working like a server program, our devices connected to this program
+This program working as a server program, our devices connected to this program
 200 IOT devices connected to the server its mean 200 opened 200 socket.
-Its sending and receiving messages, message is a command for the devices.
+Its sending and receiving messages concurrently, message is a command for the devices.
 
 
 
