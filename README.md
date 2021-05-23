@@ -10,6 +10,8 @@ We need to testing device, with like a test automation systems.
 This program working as a server program, our devices connected to this program
 200 IOT devices connected to the server its mean 200 opened 200 socket.
 Its sending and receiving messages concurrently, message is a command for the devices.
+Devices connecting to the server. Server sends Automaticly "PO"(read parametry) code to the
+devices. After that devices sends information to the server after  PO code  
 
 
 
